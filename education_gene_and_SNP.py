@@ -2,6 +2,7 @@ import random
 import csv
 from numpy import random as np_random
 import numpy as np
+import matplotlib.pyplot as plt
 
 #read age, bmi and height
 with open('result.csv','r') as csvfile:
@@ -155,6 +156,57 @@ for i in range(250):
 #SNP5:0,1,2 according to gender(all female in this simulation case)
 SNP5 = [1]*250
 
+#visualisation
+x=np.arange(0,250)
+con = [0]*250
+
+'''
+fig, axs = plt.subplots(2, 2)
+axs[0, 0].scatter(gene1,con)
+axs[0, 0].set_title("gene1")
+axs[0, 1].scatter(gene2,con)
+axs[0, 1].set_title("gene2")
+axs[1, 0].plot(gene1)
+axs[1, 0].set_title("gene1")
+axs[1, 1].plot(gene2)
+axs[1, 1].set_title("gene2")
+plt.show()
+
+
+fig, axs = plt.subplots(2, 2)
+axs[0, 0].scatter(x,gene3)
+axs[0, 0].set_title("gene3")
+axs[0, 1].scatter(gene4,con)
+axs[0, 1].set_title("gene4")
+axs[1, 0].scatter(gene5,con)
+axs[1, 0].set_title("gene5")
+axs[1, 1].scatter(gene6,con)
+axs[1, 1].set_title("gene6")
+plt.show()
+
+fig, axs = plt.subplots(2, 2)
+axs[0, 0].plot(gene7)
+axs[0, 0].set_title("gene7")
+axs[0, 1].scatter(gene8,con)
+axs[0, 1].set_title("gene8")
+axs[1, 0].plot(gene9)
+axs[1, 0].set_title("gene9")
+axs[1, 1].scatter(gene10,con)
+axs[1, 1].set_title("gene10")
+plt.show()
+
+fig, axs = plt.subplots(2, 2)
+axs[0, 0].plot(SNP1)
+axs[0, 0].set_title("SNP1")
+axs[0, 1].plot(SNP2)
+axs[0, 1].set_title("SNP2")
+axs[1, 0].plot(SNP3)
+axs[1, 0].set_title("SNP3")
+axs[1, 1].plot(SNP4)
+axs[1, 1].set_title("SNP4")
+plt.show()
+'''
+
 #silly code for merging records
 for i in range(250):
     temp_result[i+1].append(case_status[i])
@@ -189,8 +241,9 @@ for i in range(250):
 for i in range(250):
     temp_result[i + 1].append(SNP5[i])
 
-#save file
-with open('result2.csv', 'w+',newline='',encoding="utf-8") as f7:
-    writer = csv.writer(f7)
-    print(temp_result)
-    writer.writerows(temp_result)
+# save file
+
+#with open('result2.csv', 'w+',newline='',encoding="utf-8") as f7:
+#    writer = csv.writer(f7)
+#    print(temp_result)
+#    writer.writerows(temp_result)
